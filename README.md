@@ -41,10 +41,10 @@ git checkout development
 git pull origin development
 ```
 
-Create a new branch for your work:
+Create a new branch for your work from `development` branch:
 
 ```bash
-git checkout -b feat/your-feature-name
+git checkout -b feat/your-feature-name development
 ```
 
 Replace `feat/your-feature-name` with the appropriate prefix and name based on what you are working on.
