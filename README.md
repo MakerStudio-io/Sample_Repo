@@ -41,7 +41,7 @@ git checkout development
 git pull origin development
 ```
 
-Create a new branch for your work from `development` branch:
+Create a new branch for your work from the `development` branch:
 
 ```bash
 git checkout -b feat/your-feature-name development
@@ -78,6 +78,8 @@ Go to the repository on GitHub and create a new Pull Request from your branch to
 
 Your PR will be reviewed by the assigned reviewer for your project. Address any feedback and make necessary changes. Once approved, your PR will be merged into the `development` branch.
 
+**Important**: Changes should never be merged directly into the `development` or `main` branches. All changes must be made through a Pull Request (PR). Each PR needs to be reviewed and approved by the assigned reviewer before it is merged. This ensures that all code is properly reviewed and maintains the integrity of our codebase.
+
 ### 7. Merging Development to Main
 
 Periodically, once all features and fixes in the `development` branch are tested and approved, the `development` branch will be merged into the `main` branch. This step is usually performed by a team lead or a designated developer:
@@ -88,6 +90,30 @@ git pull origin main
 git merge development
 git push origin main
 ```
+
+## Rebasing and Squashing Commits
+
+### Rebasing
+
+If you need to incorporate changes from another branch into your current branch, use rebase instead of merge to maintain a clean history:
+
+```bash
+git checkout your-branch
+git pull --rebase origin development
+```
+
+This will replay your changes on top of the latest `development` branch.
+
+### Squashing Commits
+
+If there are duplicate commits or too many small commits, squash them before merging. This can be done using interactive rebase:
+
+```bash
+git checkout your-branch
+git rebase -i HEAD~n
+```
+
+Replace `n` with the number of commits you want to squash. Mark the commits you want to squash with `s` or `squash`.
 
 ## Summary of Commands
 
@@ -123,7 +149,19 @@ Here's a quick summary of the commands you will use:
 
 5. **Create a Pull Request on GitHub.**
 
-6. **Merge development to main (for team leads):**
+6. **Rebase with the latest development branch:**
+
+   ```bash
+   git pull --rebase origin development
+   ```
+
+7. **Squash commits if necessary:**
+
+   ```bash
+   git rebase -i HEAD~n
+   ```
+
+8. **Merge development to main (for team leads):**
 
    ```bash
    git checkout main
@@ -145,6 +183,8 @@ Here's a quick summary of the commands you will use:
 - **Keep commits atomic:** Ensure each commit is a small, logical change.
 - **Write clear commit messages:** Describe what the commit does and why.
 - **Stay updated:** Regularly pull changes from `development` to avoid conflicts.
-- **Review and test thoroughly:** Ensure your changes are reviewed and tested before merging.
+- **Use rebase for incorporating changes:** Rebase instead of merge to maintain a clean history.
+- **Squash commits if necessary:** Squash duplicate or small commits for a cleaner history.
+- **Review and test thoroughly:** Ensure your changes are reviewed and approved before merging.
 
 By following this strategy, we maintain a clean, organized, and efficient workflow. If you have any questions, feel free to ask your team lead. Happy coding!
