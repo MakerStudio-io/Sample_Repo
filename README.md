@@ -19,6 +19,10 @@ When working on a new feature, bug fix, or documentation update, you will create
 - **Other Fixes**: `fix/your-fix`
 - **Code Refactoring**: `refactor/your-refactor`
 
+## Git Workflow Diagram
+
+![Git Workflow Diagram](/assets/git-workflow.png)
+
 ## Workflow Steps
 
 ### 1. Clone the Repository
