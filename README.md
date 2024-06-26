@@ -6,7 +6,7 @@ Welcome to the MakerStudio development team! To ensure a smooth and consistent w
 
 We have two main branches:
 
-1. **main**: This is our production branch. Only stable and approved code is merged here.
+1. **main**: This is our production branch. Only stable and approved code is merged here. (Note: This branch could also be named `master` in some repositories.)
 2. **development**: This is our main working branch. All new features, bug fixes, and other changes are first merged here.
 
 ### Feature Branches
@@ -82,7 +82,7 @@ Go to the repository on GitHub and create a new Pull Request from your branch to
 
 Your PR will be reviewed by the assigned reviewer for your project. Address any feedback and make necessary changes. Once approved, your PR will be merged into the `development` branch.
 
-**Important**: Changes should never be merged directly into the `development` or `main` branches. All changes must be made through a Pull Request (PR). Each PR needs to be reviewed and approved by the assigned reviewer before it is merged. This ensures that all code is properly reviewed and maintains the integrity of our codebase.
+**Important**: Changes should never be merged directly into the `development` or `main` (or `master`) branches. All changes must be made through a Pull Request (PR). Each PR needs to be reviewed and approved by the assigned reviewer before it is merged. This ensures that all code is properly reviewed and maintains the integrity of our codebase.
 
 ### 7. Merging Development to Main
 
